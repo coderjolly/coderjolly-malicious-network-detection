@@ -56,6 +56,30 @@ The following supervised learning models were employed:
 ![AdaBoost](ss/adaboost.jpg)
 
 
+### Observations
+
+Using feature importance analysis, the following features were identified as the most important for classifying between malicious and non-malicious connections:
+
+#### 1. XGBoost
+
+![XGBoost-feature](ss/xgboost_feature.jpg)
+
+- Priority 3 has maximum feature importance because all the data points having 'Priority' = 3, is classified as O (Non-Malicious), whereas for all other "Priority' it is classified as 1 (Malicious).
+
+#### 2. Random Forest
+
+![RandomForest-feature](ss/rfc_feature.jpg)
+
+- Priority 3 has maximum feature importance because all the data points having 'Priority' = 3, is classified as O (Non-Malicious), whereas for all other "Priority' it is classified as 1 (Malicious).
+- Feature "ActionPerformed' with value 'b' (http _inspect) "IIS UNICODE CODEPOINT ENCODING" is always classified as (non-Malicious). It can be considered as safe "ActionPerformed'.
+
+#### 3. AdaBoost
+
+![AdaBoost-feature](ss/adaboost_feature.jpg)
+
+- Priority 3 has maximum feature importance because all the data points having 'Priority' = 3, is classified as O (Non-Malicious), whereas for all other "Priority' it is classified as 1 (Malicious).
+- Feature 'DestinationPort' with values "(60384,60024,60061)' is always classified as O (Non-Malicious). It can be considered as a safe 'DestinationPort', but since importance is negligible, it should not be treated as a 'safe' port. Less number of data records could be one of the reasons for such low importance.
+
 
 
 
